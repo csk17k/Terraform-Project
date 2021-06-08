@@ -1,7 +1,7 @@
 # Version JDK8
 
 FROM centos:7
-MAINTAINER Hareesh Thummala, hareesh5041@gmail.com
+MAINTAINER SriCharan Koyalkar, csk17k@gmail.com
 
 RUN yum install -y java-1.8.0-openjdk-devel wget git maven
 
@@ -23,7 +23,7 @@ RUN chmod g+rwx /opt/tomcat/bin
 RUN chmod g+r /opt/tomcat/bin/*
 
 RUN rm -rf /opt/tomcat/webapps/*
-RUN cd /tmp && git clone https://github.com/Hareesh5041/CI-CD-using-Docker.git
+RUN cd /tmp && git clone https://github.com/sricharankoyalkar/spring-mvc-login.git
 RUN cd /tmp/CI-CD-using-Docker && mvn clean install
 RUN cp /tmp/CI-CD-using-Docker/target/LoginWebApp-1.war /opt/tomcat/webapps/ROOT.war
 RUN chmod 777 /opt/tomcat/webapps/ROOT.war
