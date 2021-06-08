@@ -14,12 +14,12 @@ resource "google_storage_bucket" "static-site" {
     not_found_page   = "404.html"
   }
 }
-
+}
 resource "google_compute_network" "webserver" {
   name                    = "${var.prefix}-vpc-${var.region}"
   auto_create_subnetworks = false
 }
-
+}
 resource "google_compute_subnetwork" "webserver" {
   name          = "${var.prefix}-subnet"
   region        = var.region
